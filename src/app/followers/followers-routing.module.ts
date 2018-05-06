@@ -9,6 +9,10 @@ const routes: Routes = [
     component: FollowerListComponent
   },
   {
+    path: 'followers/:username',
+    component: FollowerListComponent
+  },
+  {
     path: 'followers/:id',
     component: FollowerDetailComponent
   }
