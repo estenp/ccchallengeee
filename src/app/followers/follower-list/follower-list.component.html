@@ -1,7 +1,11 @@
-<p>
-  follower-list component
+<section>
 
-  this would list out all the followers.
 
-  need to be able to paginate
-</p>
+  <ul *ngFor="let user of followers">
+    <li>
+      {{ user | json }}
+    </li>
+  </ul>
+
+
+</section>

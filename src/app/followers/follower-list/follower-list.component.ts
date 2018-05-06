@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FollowerService } from '../follower.service';
 
 @Component({
   selector: 'app-follower-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FollowerListComponent implements OnInit {
 
-  constructor() { }
+  public followers = [];
+
+  constructor(private followerService: FollowerService) { }
 
   ngOnInit() {
+    this.followerService.getFollowersByUsername('collinforrester').subscribe(
+      followers => { this.followers = followers; }
+    );  
   }
 
 }
