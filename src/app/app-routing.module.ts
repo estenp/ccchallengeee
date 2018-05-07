@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FollowersModule } from './followers/followers.module'
+import { UserModule } from './user/user.module'
 
 const routes: Routes = [
   {
-    path: 'followers',
-    loadChildren: './followers/followers.module#FollowersModule'
+    path: 'usersearch',
+    loadChildren: './user/user.module#UserModule'
   },
   {
     path: '',
-    redirectTo: '/followers',
+    redirectTo: '/usersearch',
     pathMatch: 'full'
   }
 ];

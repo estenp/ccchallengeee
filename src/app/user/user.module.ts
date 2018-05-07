@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { FollowersRoutingModule } from './followers-routing.module';
+import { UserComponent } from './user.component';
+import { UserRoutingModule } from './user-routing.module';
 import { FollowerListComponent } from './follower-list/follower-list.component';
 import { FollowerDetailComponent } from './follower-list/follower-detail/follower-detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FollowersRoutingModule
+    UserRoutingModule,
+    SharedModule
   ],
-  declarations: [FollowerListComponent, FollowerDetailComponent]
+  declarations: [UserComponent, FollowerListComponent, FollowerDetailComponent]
 })
-export class FollowersModule { }
+export class UserModule { }

@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class FollowerService {
+export class UserService {
 
   private url = 'https://api.github.com';
 
@@ -17,8 +17,13 @@ export class FollowerService {
     private http: HttpClient
   ) { }
 
+  public getUserByUsername(username: string): Observable<any> {
+    return this.http.get(this.url + `/users/${username}`).pipe(
+      catchError(val => of(`ERROR: ${val}`))
+    );
+  }
+
   public getFollowersByUsername(username: string): Observable<any> {
-    console.log(username);
     return this.http.get(this.url + `/users/${username}/followers`).pipe(
       catchError(val => of(`ERROR: ${val}`))
     );

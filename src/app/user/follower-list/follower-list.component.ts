@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FollowerService } from '../follower.service';
+import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,13 +13,17 @@ export class FollowerListComponent implements OnInit {
 
   public followers = [];
 
-  constructor(private route: ActivatedRoute, private location: Location, private followerService: FollowerService) { }
+  constructor(private route: ActivatedRoute, private location: Location, private userService: UserService) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('username');
-    this.followerService.getFollowersByUsername('collinforrester').subscribe(
+    const username = this.route.snapshot.paramMap.get('username');
+    this.userService.getFollowersByUsername(username).subscribe(
       followers => { this.followers = followers; }
     );  
+  }
+
+  onSearch($event) {
+
   }
 
 }

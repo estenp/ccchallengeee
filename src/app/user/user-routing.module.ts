@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FollowerListComponent } from './follower-list/follower-list.component';
 import { FollowerDetailComponent } from './follower-list/follower-detail/follower-detail.component';
+import { UserComponent } from './user.component';
 
 const routes: Routes = [
   {
@@ -9,11 +10,11 @@ const routes: Routes = [
     component: FollowerListComponent
   },
   {
-    path: 'followers/:username',
-    component: FollowerListComponent
+    path: 'user/:username',
+    component: UserComponent
   },
   {
-    path: 'followers/:id',
+    path: 'user/:username/followers/:id',
     component: FollowerDetailComponent
   }
 ];
@@ -22,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FollowersRoutingModule { }
+export class UserRoutingModule { }

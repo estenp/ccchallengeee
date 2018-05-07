@@ -1,0 +1,15 @@
+<section>
+  <app-search></app-search>
+
+  <ul>
+    <ng-container *ngIf="followers.length > 0; else noFollowers">
+      <li *ngFor="let user of followers">
+        {{ user | json }}
+      </li>
+    </ng-container>
+    <ng-template #noFollowers>
+      No followers returned for this username.
+    </ng-template>
+  </ul>
+
+</section>
