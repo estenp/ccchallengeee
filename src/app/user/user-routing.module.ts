@@ -6,16 +6,17 @@ import { UserComponent } from './user.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: FollowerListComponent
-  },
-  {
     path: 'user/:username',
     component: UserComponent
   },
   {
     path: 'user/:username/followers/:id',
     component: FollowerDetailComponent
+  },
+  {
+    path: '',
+    component: UserComponent,
+    pathMatch: 'full'
   }
 ];
 

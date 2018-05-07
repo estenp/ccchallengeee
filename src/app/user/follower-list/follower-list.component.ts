@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -11,17 +11,15 @@ import { Location } from '@angular/common';
 export class FollowerListComponent implements OnInit {
 
 
-  public followers = [];
+  @Input() followers = [];
 
   constructor(private route: ActivatedRoute, private location: Location, private userService: UserService) { }
 
   ngOnInit() {
-    const username = this.route.snapshot.paramMap.get('username');
-    this.userService.getFollowersByUsername(username).subscribe(
-      followers => { this.followers = followers; }
-    );  
+    
   }
 
+  // within this component, used to filter followers
   onSearch($event) {
 
   }

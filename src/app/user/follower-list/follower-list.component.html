@@ -1,6 +1,6 @@
 <section>
-  <app-search></app-search>
 
+  <app-search id="follower-filter"></app-search>
   <ul>
     <ng-container *ngIf="followers.length > 0; else noFollowers">
       <li *ngFor="let user of followers">

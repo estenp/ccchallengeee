@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
+import { UserComponent } from './user/user.component';
+import { FollowerListComponent } from './user/follower-list/follower-list.component';
+import { FollowerDetailComponent } from './user/follower-list/follower-detail/follower-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent,
+    FollowerListComponent,
+    FollowerDetailComponent
   ],
   imports: [
     BrowserModule,

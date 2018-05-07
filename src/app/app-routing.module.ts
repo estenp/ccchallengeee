@@ -1,16 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserModule } from './user/user.module'
+import { UserComponent } from './user/user.component';
+import { FollowerDetailComponent } from './user/follower-list/follower-detail/follower-detail.component';
 
 const routes: Routes = [
   {
-    path: 'usersearch',
-    loadChildren: './user/user.module#UserModule'
+    path: '',
+    redirectTo: '/user',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: '/usersearch',
-    pathMatch: 'full'
+    path: 'user',
+    component: UserComponent
+  },
+  {
+    path: 'user/:username',
+    component: UserComponent
+  },
+  {
+    path: 'user/:username/followers/:id',
+    component: FollowerDetailComponent
+  },
+  {
+    path: '**',
+    component: UserComponent
   }
 ];
 

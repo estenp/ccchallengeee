@@ -10,9 +10,6 @@ export class UserService {
 
   private url = 'https://api.github.com';
 
-  static getFollowersByUsername(arg0: any): any {
-    throw new Error("Method not implemented.");
-  }
   constructor(
     private http: HttpClient
   ) { }
