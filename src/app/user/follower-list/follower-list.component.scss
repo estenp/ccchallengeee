@@ -4,6 +4,21 @@ ul {
         border: solid 1px #ddd;
         margin: 10px;
         padding: 10px;
+        //display: flex;
+        display: block;
     }
+}
+
+.avatar {
+    max-width: 18%;
+    //flex: 1 1 18%;
+    display: inline-block;
+    //flex-direction: row;
+    //flex-wrap: wrap;
+}
+
+.primary-info {
+    //flex: 6;
+    display: inline-block;
 }
 

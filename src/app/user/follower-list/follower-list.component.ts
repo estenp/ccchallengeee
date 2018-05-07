@@ -16,7 +16,7 @@ export class FollowerListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private userService: UserService) { }
 
   ngOnInit() {
-    
+    console.log(this.followers);
   }
 
   // within this component, used to filter followers

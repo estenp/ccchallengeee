@@ -4,7 +4,10 @@
   <ul>
     <ng-container *ngIf="followers.length > 0; else noFollowers">
       <li *ngFor="let user of followers">
-        {{ user | json }}
+        <img class="avatar" src="{{user['avatar_url']}}" />
+        <div class="primary-info">
+          {{ user | json }}
+        </div>
       </li>
     </ng-container>
     <ng-template #noFollowers>
