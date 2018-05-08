@@ -15,11 +15,13 @@ const routes: Routes = [
   },
   {
     path: 'user/:username',
-    component: UserComponent
+    component: UserComponent,
+    data: { view: 'followerList' }
   },
   {
-    path: 'user/:username/followers/:id',
-    component: FollowerDetailComponent
+    path: 'user/:username/followers/:followername',
+    component: UserComponent,
+    data: { view: 'followerDetail' }
   },
   {
     path: '**',

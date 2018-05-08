@@ -2,23 +2,23 @@ ul {
     list-style: none;
     li {
         border: solid 1px #ddd;
-        margin: 10px;
+        margin: 10px 0;
         padding: 10px;
-        //display: flex;
-        display: block;
+        word-break: break-word;
     }
 }
 
 .avatar {
-    max-width: 18%;
-    //flex: 1 1 18%;
-    display: inline-block;
-    //flex-direction: row;
-    //flex-wrap: wrap;
+    width: 100%;
 }
 
 .primary-info {
-    //flex: 6;
-    display: inline-block;
+    .info-label, .info-data {
+        display: inline-block;
+    }
+    .info-label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
 }
 

@@ -10,13 +10,13 @@ import { Location } from '@angular/common';
 })
 export class FollowerListComponent implements OnInit {
 
-
+  @Input() user: string;
   @Input() followers = [];
 
   constructor(private route: ActivatedRoute, private location: Location, private userService: UserService) { }
 
   ngOnInit() {
-    console.log(this.followers);
+    //console.log(this.followers);
   }
 
   // within this component, used to filter followers

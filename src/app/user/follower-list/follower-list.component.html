@@ -3,10 +3,13 @@
   <app-search id="follower-filter"></app-search>
   <ul>
     <ng-container *ngIf="followers.length > 0; else noFollowers">
-      <li *ngFor="let user of followers">
-        <img class="avatar" src="{{user['avatar_url']}}" />
-        <div class="primary-info">
-          {{ user | json }}
+      <li class="flex-row" *ngFor="let user of followers">
+        <div class="flex-child-two tablet-flex-child-six mobile-flex-child-twelve">
+          <img class="avatar" src="{{user['avatar_url']}}" />
+        </div>
+        <div class="flex-child-ten tablet-flex-child-six mobile-flex-child-twelve primary-info">
+          <div><h3><a routerLink="/user/{{user['login']}}">{{user.login}}</a></h3></div>
+          <div><div class="info-label">Profile:</div><div class="info-data"><a href="{{ user.html_url }}">{{ user.html_url }}</a></div></div>
         </div>
       </li>
     </ng-container>

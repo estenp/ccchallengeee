@@ -12,7 +12,7 @@ body {
     box-sizing: border-box;
     font-family: $base-fonts;
     font-size: 12px;
-    color: $standard-text;
+    color: $standard-text-color;
 }
 
 section {
@@ -21,8 +21,17 @@ section {
     padding: 10px;
 }
 
+h1 {
+    font-size: 26px;
+}
+h2 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 200;
+}
+
 .panel {
     border: solid 1px #ddd;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px #eee;
+    box-shadow: 1px 1px 20px #eee;
 }
