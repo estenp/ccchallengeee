@@ -12,11 +12,13 @@ export class FollowerListComponent implements OnInit {
 
   @Input() user: string;
   @Input() followers = [];
+  private username = '';
 
   constructor(private route: ActivatedRoute, private location: Location, private userService: UserService) { }
 
   ngOnInit() {
     //console.log(this.followers);
+    this.username = this.route.snapshot.paramMap.get('username');
   }
 
   // within this component, used to filter followers

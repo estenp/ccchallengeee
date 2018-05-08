@@ -19,8 +19,8 @@ const routes: Routes = [
     data: { view: 'followerList' }
   },
   {
-    path: 'user/:username/followers/:followername',
-    component: UserComponent,
+    path: 'user/:username/follower-detail/:followername',
+    component: FollowerDetailComponent,
     data: { view: 'followerDetail' }
   },
   {

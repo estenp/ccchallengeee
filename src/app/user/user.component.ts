@@ -16,10 +16,11 @@ import { Location } from '@angular/common';
         <app-search id="user-search" placeholder="Search for a User" (searching)="onSearch($event)"></app-search>
         <section class="panel">
             <ng-container *ngIf="user">
-                <p>{{user.bio}}</p>
-            </ng-container>
-            <ng-container *ngIf="view === 'followerList'">
-                <app-follower-list [user]="user.login" [followers]="this.followers"></app-follower-list>
+
+                <app-user-detail [user]="user">          
+                    <app-follower-list [user]="user.login" [followers]="this.followers"></app-follower-list>
+                </app-user-detail>  
+
             </ng-container>
         </section>
     </section>
@@ -52,16 +53,11 @@ export class UserComponent implements OnInit {
     this.userService.getUserByUsername(this.username).subscribe(
         user => { 
             let newArray = [];
-            /*for (let property of Object.keys(user)) {
-                newArray.push(user[property]);
-            }*/
             newArray = user;
             this.user = newArray;
-            //console.log(this.user);
             this.fullname = user['name'];
         }
     );  
-    //console.log(this.user);
 
     this.userService.getFollowersByUsername(this.username).subscribe(
       followers => { this.followers = followers; console.log(this.followers)}
